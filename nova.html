@@ -1,0 +1,39 @@
+html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentarios</title>
+    <link rel="stylesheet" href="nova.css">
+</head>
+<body>
+    <h1>Comentarios</h1>
+
+    <input type="text" id="commentInput" placeholder="Escribe un comentario...">
+    <button onclick="addComment()">Enviar</button>
+
+    <div id="commentsContainer"></div>
+
+    <script>
+        function addComment() {
+            const commentInput = document.getElementById('commentInput');
+            const commentText = commentInput.value;
+
+            if (commentText.trim() === '') {
+                alert('Por favor, escribe un comentario válido.');
+                return;
+            }
+
+            const commentsContainer = document.getElementById('commentsContainer');
+            const newComment = document.createElement('div');
+            newComment.innerText = commentText;
+
+            // Insertar el nuevo comentario al principio del contenedor
+            commentsContainer.insertBefore(newComment, commentsContainer.firstChild);
+
+            commentInput.value = '';
+        }
+    </script>
+</body>
+</html>

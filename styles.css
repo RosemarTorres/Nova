@@ -11021,7 +11021,7 @@ header.masthead h1, header.masthead .h1 {
 }
 
 .yy {
-
+ gap: 1rem;
  margin-top: 10px;
   display: flex;
   justify-content: center;
